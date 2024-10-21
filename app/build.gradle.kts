@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
 }
 
 android {
@@ -50,6 +51,20 @@ android {
 }
 
 dependencies {
+
+
+
+    val mapsComposeVersion = "4.4.1"
+
+    // Google Maps Compose
+    implementation("com.google.maps.android:maps-compose:$mapsComposeVersion")
+
+    // Utilidades de Google Maps para Jetpack Compose
+    implementation("com.google.maps.android:maps-compose-utils:$mapsComposeVersion")
+
+    // Widgets de Google Maps Compose
+    implementation("com.google.maps.android:maps-compose-widgets:$mapsComposeVersion")
+
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
